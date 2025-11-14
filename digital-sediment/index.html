@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIGITAL SEDIMENT</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div id="ui">
+    <div class="header">
+      <h1>DIGITAL SEDIMENT</h1>
+      <p class="subtitle">GEOLOGICAL MEMORY OF COLLECTIVE PRESENCE</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="label">ACTIVE PARTICLES</span>
+        <span class="value" id="active-count">0</span>
+      </div>
+      <div class="metric">
+        <span class="label">SETTLED LAYERS</span>
+        <span class="value" id="layer-count">0</span>
+      </div>
+      <div class="metric">
+        <span class="label">TOTAL MARKS</span>
+        <span class="value" id="total-marks">0</span>
+      </div>
+      <div class="metric">
+        <span class="label">OLDEST LAYER AGE</span>
+        <span class="value" id="oldest-layer">0s</span>
+      </div>
+      <div class="metric">
+        <span class="label">COMPRESSION DEPTH</span>
+        <span class="value" id="compression-depth">0.0m</span>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <p>CLICK OR TOUCH TO LEAVE YOUR MARK</p>
+      <p class="small">WATCH IT SETTLE INTO THE GEOLOGICAL RECORD</p>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
