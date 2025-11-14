@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Web Experiments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+            margin-bottom: 4rem;
+            opacity: 0.7;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
+        }
+
+        .project h2 {
+            font-size: 1.5rem;
+            letter-spacing: 0.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .project p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .project a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .project a:hover {
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .project {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Experiments</h1>
+        <p class="subtitle">Creative provocations for the web</p>
+
+        <div class="projects">
+            <div class="project">
+                <h2>Fragments</h2>
+                <p>
+                    An interactive meditation on digital attention. Every click fragments your focus.
+                    Every movement disturbs your peace. But if you sit still, something emerges from the chaos.
+                </p>
+                <p>
+                    A critique of the attention economy and a functional meditation tool.
+                </p>
+                <p><a href="/fragments/">Experience FRAGMENTS →</a></p>
+            </div>
+
+            <!-- Future experiments will appear here -->
+        </div>
+    </div>
+</body>
+</html>
