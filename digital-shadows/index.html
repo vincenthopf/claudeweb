@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Shadows - An Interactive Essay on Surveillance Design</title>
+    <meta name="description" content="An interactive visual essay exploring the hidden mechanisms of digital surveillance and data extraction">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for background visualizations -->
+    <canvas id="trackingCanvas"></canvas>
+
+    <!-- Main content -->
+    <main>
+        <section id="intro" class="section">
+            <h1>Digital Shadows</h1>
+            <p class="subtitle">Every movement tells a story.</p>
+            <p class="intro-text">
+                Welcome. This is a simple website. Clean. Minimal. Respectful of your time.
+            </p>
+            <p class="intro-text">
+                Or is it?
+            </p>
+            <div class="scroll-indicator">↓ Keep scrolling</div>
+        </section>
+
+        <section id="tracking-reveal" class="section">
+            <h2>What We See</h2>
+            <p>You see a cursor. A simple pointer moving across a screen.</p>
+            <div class="visualization-space" id="viz1"></div>
+        </section>
+
+        <section id="data-collection" class="section">
+            <h2>What We Collect</h2>
+            <p>But beneath that simple movement, we're collecting:</p>
+            <ul class="data-list">
+                <li data-reveal="1">Your mouse position (X, Y coordinates) <span class="data-value" id="mousePos">—</span></li>
+                <li data-reveal="2">Movement velocity and acceleration <span class="data-value" id="mouseVel">—</span></li>
+                <li data-reveal="3">Hesitation patterns (where you pause) <span class="data-value" id="hesitations">—</span></li>
+                <li data-reveal="4">Reading behavior (time spent per section) <span class="data-value" id="readTime">—</span></li>
+                <li data-reveal="5">Scroll depth and pace <span class="data-value" id="scrollData">—</span></li>
+                <li data-reveal="6">Click patterns and hover intentions <span class="data-value" id="clickData">—</span></li>
+                <li data-reveal="7">Screen resolution and window size <span class="data-value" id="screenData">—</span></li>
+                <li data-reveal="8">Time of day and session duration <span class="data-value" id="timeData">—</span></li>
+            </ul>
+            <p class="revelation">This isn't hypothetical. This is happening right now, on this page.</p>
+        </section>
+
+        <section id="behavior-analysis" class="section">
+            <h2>What It Reveals</h2>
+            <p>This data isn't just numbers. It's a psychological profile:</p>
+            <div class="insight-grid">
+                <div class="insight-card" data-reveal="9">
+                    <h3>Emotional State</h3>
+                    <p>Mouse movement smoothness correlates with calmness. Erratic movements suggest anxiety or uncertainty.</p>
+                    <div class="insight-value" id="emotionalState">Analyzing...</div>
+                </div>
+                <div class="insight-card" data-reveal="10">
+                    <h3>Attention Level</h3>
+                    <p>Reading speed and pause patterns reveal engagement, confusion, or distraction.</p>
+                    <div class="insight-value" id="attentionLevel">Analyzing...</div>
+                </div>
+                <div class="insight-card" data-reveal="11">
+                    <h3>Intent Prediction</h3>
+                    <p>Pre-click hover patterns allow us to predict your next action before you take it.</p>
+                    <div class="insight-value" id="intentPrediction">Analyzing...</div>
+                </div>
+                <div class="insight-card" data-reveal="12">
+                    <h3>Vulnerability Markers</h3>
+                    <p>Hesitation before clicking can indicate susceptibility to manipulation.</p>
+                    <div class="insight-value" id="vulnerability">Analyzing...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dark-patterns" class="section">
+            <h2>The Architecture of Manipulation</h2>
+            <p>These insights enable "dark patterns" — interfaces designed to exploit human psychology:</p>
+
+            <div class="dark-pattern-example">
+                <h3>Example 1: The Urgency Illusion</h3>
+                <div class="pattern-demo" id="urgencyDemo">
+                    <div class="fake-notification">
+                        <span class="urgent-text">⚠️ Only 2 spots left!</span>
+                        <span class="timer" id="fakeTimer">23:45</span>
+                    </div>
+                    <p class="pattern-explanation">
+                        <strong>How it works:</strong> Artificial scarcity creates pressure. The timer is fake—it resets for every visitor. Your hesitation data tells us exactly how long to make the timer to maximize conversion.
+                    </p>
+                </div>
+            </div>
+
+            <div class="dark-pattern-example">
+                <h3>Example 2: The Infinite Scroll Trap</h3>
+                <div class="pattern-demo" id="scrollDemo">
+                    <p class="pattern-explanation">
+                        <strong>How it works:</strong> Your scroll velocity tells us when you're in a "flow state"—and that's when we remove stopping points. Infinite scroll exploits your momentum, keeping you engaged past your intended time.
+                    </p>
+                </div>
+            </div>
+
+            <div class="dark-pattern-example">
+                <h3>Example 3: Confirmshaming</h3>
+                <div class="pattern-demo" id="confirmshameDemo">
+                    <button class="primary-cta">Yes, I want to save money!</button>
+                    <button class="shame-cta">No, I prefer paying more like a fool</button>
+                    <p class="pattern-explanation">
+                        <strong>How it works:</strong> Emotional manipulation makes declining feel shameful. Your mouse movement data shows us which phrases trigger the strongest emotional response.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="the-invisible-layer" class="section">
+            <h2>The Invisible Layer</h2>
+            <p>Everything you've read so far is visible. You can see it, understand it, choose to accept or reject it.</p>
+            <p>But there's another layer—one you can't see:</p>
+            <div class="code-reveal">
+                <pre><code>// This code runs on most modern websites
+analytics.track('page_view', {
+  user_id: fingerprint(),
+  mouse_patterns: mouseData,
+  emotional_state: inferEmotion(),
+  predicted_actions: predictNext(),
+  vulnerability_score: calculateVulnerability(),
+  optimal_manipulation: selectDarkPattern()
+});
+
+// Send to 47 third-party trackers
+shareWith(advertisers, databrokers, "partners");
+</code></pre>
+            </div>
+            <p class="revelation">This isn't science fiction. This is the standard operating procedure of surveillance capitalism.</p>
+        </section>
+
+        <section id="your-shadow" class="section">
+            <h2>Your Shadow</h2>
+            <p>Based on your behavior on this page, we've created a unique visualization of your "digital shadow"—the trace you leave behind:</p>
+            <div class="shadow-visualization" id="shadowViz">
+                <canvas id="shadowCanvas"></canvas>
+            </div>
+            <p class="shadow-caption">This is what you look like as data.</p>
+        </section>
+
+        <section id="the-question" class="section">
+            <h2>The Question</h2>
+            <p class="big-question">If you can see it happening, does that make it acceptable?</p>
+            <p>
+                This page collected real data about your behavior. It tracked you, analyzed you, profiled you.
+                But it showed you what it was doing.
+            </p>
+            <p>
+                Most websites don't.
+            </p>
+            <p>
+                They collect the same data—often more—but hide it behind "Accept Cookies" buttons and
+                40-page privacy policies designed to be incomprehensible.
+            </p>
+            <p class="revelation">
+                Transparency doesn't equal consent. Visibility doesn't equal ethics.
+            </p>
+        </section>
+
+        <section id="the-cost" class="section">
+            <h2>The Cost</h2>
+            <div class="cost-counter">
+                <div class="cost-item">
+                    <span class="cost-label">Data points collected:</span>
+                    <span class="cost-value" id="dataPointCount">0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Third-party trackers (typical site):</span>
+                    <span class="cost-value">47</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Your attention traded for:</span>
+                    <span class="cost-value">$0.00083</span>
+                </div>
+            </div>
+            <p>
+                The average person's data is worth $0.00083 per page view to advertisers.
+                But it's worth far more to you—it's your privacy, your autonomy, your psychological freedom.
+            </p>
+        </section>
+
+        <section id="resistance" class="section">
+            <h2>What Can Be Done?</h2>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h3>Individual Actions</h3>
+                    <ul>
+                        <li>Use privacy-focused browsers (Firefox, Brave)</li>
+                        <li>Install tracker blockers (uBlock Origin, Privacy Badger)</li>
+                        <li>Read privacy policies (or use tools like ToS;DR)</li>
+                        <li>Question every "free" service (you're the product)</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h3>Collective Actions</h3>
+                    <ul>
+                        <li>Support strong privacy legislation (GDPR, CCPA)</li>
+                        <li>Choose privacy-respecting alternatives</li>
+                        <li>Demand transparency from platforms</li>
+                        <li>Build and support ethical technology</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h3>For Designers & Developers</h3>
+                    <ul>
+                        <li>Practice ethical design—refuse dark patterns</li>
+                        <li>Collect only necessary data</li>
+                        <li>Make privacy policies readable</li>
+                        <li>Build transparency into interfaces</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="epilogue" class="section">
+            <h2>A Note on This Project</h2>
+            <p>
+                This website tracked you, but kept all data local—nothing was sent to any server.
+                No third parties have access to your behavioral data. When you close this tab, it disappears.
+            </p>
+            <p>
+                This is how it should be.
+            </p>
+            <p class="farewell">
+                The web could be a space for creativity, connection, and genuine human interaction.
+                Instead, it's become an extraction machine, optimized for capturing attention and harvesting data.
+            </p>
+            <p class="farewell">
+                But it doesn't have to be this way.
+            </p>
+            <p class="final-statement">
+                Every website is a choice. Every interface is a political statement. Every line of code either respects or exploits its users.
+            </p>
+            <p class="final-statement">
+                What will you build?
+            </p>
+        </section>
+
+        <footer>
+            <p>An interactive essay on surveillance capitalism and digital privacy.</p>
+            <p>Created as a critical design practice exploring the ethics of data collection.</p>
+            <p class="data-statement">No data from this website was transmitted or stored. All tracking was local and temporary.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
